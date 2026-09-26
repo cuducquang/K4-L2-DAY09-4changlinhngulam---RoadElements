@@ -26,6 +26,13 @@ và repo cá nhân: [`TEAMMATES.md`](TEAMMATES.md).
   Guide. Export CVAT for images 1.1 nằm ở `project/06_calibration_exports/quang.zip`: 22 box `traffic_light` và 7 tag
   `frame`. Chi tiết ở `09_cvat_export_or_task_reference.txt`.
 - **Gold và QA:** có sẵn `gold_decisions.csv` (16 dòng), `edge_case_cards.md` (14 card) và `05_qa_plan.md`.
+- **Mini lab cá nhân của Quang (traffic_sign):** nằm trong [`mini-task/submission/`](mini-task/submission/). Task
+  CVAT `sign-quang` gồm 7 ảnh core và 22 box. Đã chạy `lock` (mã khoá `A7B4-E16A`), `reference` và `compare`.
+  `comparison_log.csv` có 9 dòng, `decision_log.csv` có D1–D4, và đã điền `sign_tree.md` cùng mục Traffic sign
+  trong `scale_100k.md`. Bài chỉ yêu cầu chọn một nhánh mini lab, nhưng công cụ `lock` mặc định bắt làm đủ thứ tự
+  lane → drivable. Vì vậy lúc khoá, mình tạm bỏ qua bước kiểm thứ tự này ngay khi chạy lệnh, không sửa code của
+  repo. Các mục lane, drivable và traffic light được giữ nguyên TODO theo hướng dẫn của lab.
+  Bài học chính: mình dùng `unknown` quá rộng cho biển nhỏ nhưng vẫn đọc được (4/9 dòng khác biệt).
 
 ## Quan sát khi label calibration theo v1 (đầu vào cho v2)
 
@@ -48,4 +55,4 @@ của thành viên khác để đo bất đồng.
 3. Gold owner (Đạt): chạy `python lab9.py freeze`, rồi `git push --follow-tags`.
 4. `python lab9.py handoff`, gửi `blind-pack.zip` cho nhóm peer. Nhận export của peer, rồi chạy `score` và `gts`.
 5. Guideline v3, thêm dòng v3 trong revision log, chạy `python lab9.py check`, rồi push.
-6. Mini lab cá nhân (bước 2–3): Quang, Thắng, Nguyên chưa có submission (xem `TEAMMATES.md`).
+6. Mini lab cá nhân (bước 2–3): Thắng, Nguyên chưa có submission (xem `TEAMMATES.md`).
