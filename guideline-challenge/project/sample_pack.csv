@@ -1,1 +1,16 @@
 sample_id,split,tags,reason
+BDD02,example,normal;edge,Ngã tư NYC 4 đầu đèn xanh quay về ego + vỏ quay ngang + đèn đi bộ + đèn tí hon giao lộ sau — minh họa rule 5.2/5.3
+LISA01,example,edge;conflict;low_visibility,Chạng vạng: mũi tên trái đỏ (other) cạnh đèn tròn đỏ (ego) — minh họa rule 5.4c và xác định màu theo vị trí ô sáng
+BDD11,example,negative;critical,Chỉ có đèn đi bộ bàn tay cam — 0 box và frame=out_of_view
+BDD04,example,negative,Phố không có phần cứng tín hiệu — frame=none
+BDD25,calibration,ambiguity;low_visibility;small_far,Chạng vạng đường ướt; đèn xanh ở nhiều giao lộ liên tiếp — kiểm rule giao lộ đầu tiên / rule 1/3
+BDD18,calibration,ambiguity;low_visibility;small_far,Ban đêm; đèn đi bộ cam + trắng và chỉ có đốm xanh xa — relevance unknown / escalate hay out_of_view
+BDD17,calibration,low_visibility;occlusion;small_far,Mưa có giọt nước trên kính; đèn đỏ và xanh nhỏ lẫn lộn — kiểm state unknown và IGNORE khi nhoè
+BDD15,calibration,small_far;ambiguity,Chỉ có đầu đèn nhỏ xa ở Israel — kiểm nhánh 'ảnh chỉ có đèn xa' của rule 5.3
+LISA30,calibration,conflict;temporal,Cùng giao lộ LISA01 sau khi đèn tròn chuyển xanh còn mũi tên vẫn đỏ — visible chứ không phải escalate
+BDD13,calibration,negative;edge,Chỉ thấy hông hộp đèn đi bộ ở mép phải — out_of_view hay none
+BDD09,calibration,negative,Mặt lưng biển báo đen trông giống vỏ đèn — không box; frame=none
+BDD07,blind,normal,Hai đầu đèn xanh trên cần vươn quay về ego; kèm vỏ quay ngang; hộp đèn đi bộ; bóng đèn phản chiếu trên capo
+BDD26,blind,critical;edge;low_visibility;small_far,Ban đêm: đèn gần xanh điều khiển ego trong khi đèn đỏ/vàng xa ở giao lộ sau; có đèn đi bộ cam ngay dưới
+BDD21,blind,critical;edge;conflict;small_far,Parkway: 1 đầu đèn xanh trên cần vươn; đèn xanh tí hon bên trái; vật đỏ sau tán cây bên kia hàng rào
+BDD12,blind,critical;negative,Đèn đi bộ bàn tay đỏ-cam rõ; không có đầu đèn xe nào quay về ego — 0 box và out_of_view

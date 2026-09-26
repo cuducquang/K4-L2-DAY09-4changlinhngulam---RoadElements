@@ -1,1 +1,17 @@
 sample_id,decision_id,expected,severity,rationale
+BDD07,d1,traffic_light [relevance=ego;state=green]×2 (đầu đèn trên cần vươn trái ~236;142 và phải ~682;158),major,Hai đầu đèn thấy rõ mặt ô xanh quay về ego ở giao lộ đầu tiên — rule 5.4
+BDD07,d2,IGNORE: tổng traffic_light = 2 — không box 2 vỏ quay ngang cạnh mỗi đầu đèn; 2 hộp đèn đi bộ (~40;220 và ~935;230); đèn tí hon ~600;230,major,Không thấy mặt ô đèn (5.2); đèn đi bộ (5.1); nhỏ hơn 1/3 (5.3)
+BDD07,d3,IGNORE: không box bóng đèn phản chiếu trên capo (~245;625 và ~695;600),minor,Phản chiếu không phải đèn thật (5.1) — detector học phản chiếu sẽ tạo false positive
+BDD07,d4,frame [ego_signal=visible],minor,Có đèn ego mang màu rõ — bảng frame dòng 3
+BDD07,g1,geometry: đầu đèn trái box ≈ x230–240 y126–158 ôm vỏ mặt trước; không gồm vỏ quay ngang bên phải và cần treo; mỗi cạnh lệch ≤ 5 px,minor,Rule 3: visible extent + tolerance max(2 px; 15% chiều cao)
+BDD26,d1,traffic_light [relevance=ego;state=green] ở đầu đèn gần trên cột dải phân cách (~487;71) và không có box relevance=ego nào mang red/yellow,critical,Đèn gần điều khiển ego đang xanh — nếu lấy đèn đỏ xa làm đèn ego thì planner phanh sai (critical failure trong contract)
+BDD26,d2,IGNORE: không box các đốm đỏ/vàng xa gần điểm tụ (~632;222 và ~667;217),major,Lõi sáng < 1/3 đầu đèn gần nhất → giao lộ sau (rule 5.3)
+BDD26,d3,IGNORE: đốm cam hình bàn tay dưới đèn xanh (~437;118) không có box traffic_light,major,Đèn đi bộ gắn thấp trên cùng cột (rule 5.1 dấu hiệu ban đêm: cam + không tròn)
+BDD26,d4,frame [ego_signal=visible],minor,Có đèn ego xanh rõ — bảng frame dòng 3
+BDD21,d1,traffic_light [relevance=ego;state=green] ở đầu đèn trên cần vươn giữa (~336;295) và không có box relevance=ego nào mang red/yellow,critical,Đèn điều khiển ego duy nhất; vật đỏ sau hàng rào bên phải không được đổi kết luận của ego
+BDD21,d2,Tổng số box relevance=ego = 1 — đèn xanh tí hon bên trái (~226;320) và vật đỏ sau tán cây bên phải (~1150–1210;313) không mang relevance=ego,major,Đèn trái < 1/3 (5.3); vật bên phải thuộc đường song song sau hàng rào (5.4 other) hoặc không phải đèn
+BDD21,d3,IGNORE: 2 khối vàng-cam bên trái (~57;345 và ~75;345) không có box,major,Không thấy ô đèn tròn — hông vỏ đèn hoặc đèn đi bộ (5.1/5.2)
+BDD21,d4,frame [ego_signal=visible],minor,Có đèn ego xanh rõ — bảng frame dòng 3
+BDD21,g2,geometry: đầu đèn cần vươn box ≈ x331–341 y282–308 ôm vỏ; không gồm cần treo phía trên; mỗi cạnh lệch ≤ 4 px,minor,Rule 3: đầu đèn nhỏ vẫn phải ôm sát vỏ
+BDD12,d1,0 box traffic_light — đèn đi bộ bàn tay đỏ-cam (~1090;140) và các vỏ quay ngang/lưng cạnh nó không được box,critical,Box đèn đi bộ thành đèn ego đỏ gây phantom braking — lỗi nghiêm trọng nhất trong contract
+BDD12,d2,frame [ego_signal=out_of_view],major,Có phần cứng tín hiệu của giao lộ phía trước nhưng không thấy đèn ego — bảng frame dòng 4 (khác none)

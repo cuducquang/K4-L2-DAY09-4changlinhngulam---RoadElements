@@ -8,3 +8,4 @@ Cột Version ghi dạng `v1`, `v2`, `v3` — `make status` tìm dòng bảng c�
 
 | Version | Đổi gì | Vì sao | Bằng chứng |
 |---|---|---|---|
+| v1 | Bản nháp đầu: class `traffic_light` (state, relevance) + tag `frame.ego_signal`; cây quyết định 5.1–5.4; rule 1/3; bảng frame | Chốt contract "đèn điều khiển ego ở vạch dừng kế tiếp" | `01_problem_statement.md`; khảo sát ảnh BDD02, BDD07, BDD11, BDD12, BDD26, LISA01/30 |

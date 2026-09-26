@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "name": "traffic_light",
+    "color": "#fa3253",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "name": "state",
+        "mutable": true,
+        "input_type": "select",
+        "default_value": "__undefined__",
+        "values": ["__undefined__", "red", "yellow", "green", "unknown"]
+      },
+      {
+        "name": "relevance",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "__undefined__",
+        "values": ["__undefined__", "ego", "other", "unknown"]
+      }
+    ]
+  },
+  {
+    "name": "frame",
+    "color": "#33ddff",
+    "type": "tag",
+    "attributes": [
+      {
+        "name": "ego_signal",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "__undefined__",
+        "values": ["__undefined__", "visible", "out_of_view", "none", "escalate"]
+      }
+    ]
+  }
+]
