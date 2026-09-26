@@ -160,7 +160,7 @@ Attribute `state` để `mutable` chỉ nhằm tương thích nếu sau này chu
 | BDD11 | Chỉ thấy đèn đi bộ **bàn tay cam** bên phải ~(1200,255); không có đầu đèn xe nào quay về ego | 0 box `traffic_light`. Tag `frame [ego_signal=out_of_view]` | 5.1, bảng `frame` dòng 4 |
 | BDD04 | Phố, ban ngày, không có đèn tín hiệu hay đèn đi bộ | 0 box. Tag `frame [ego_signal=none]` | bảng `frame` dòng 5 |
 
-<!-- v2: thêm 2–3 dòng ví dụ từ ảnh calibration (BDD18, BDD25, LISA30…) theo kết luận calibration. -->
+<!-- v2: thêm 2–3 dòng ví dụ từ ảnh calibration (GTS02, GTS14, BDD18…) theo kết luận calibration. -->
 
 ## 10. Common mistakes
 

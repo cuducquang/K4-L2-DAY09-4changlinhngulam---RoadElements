@@ -4,7 +4,7 @@ Kho nội bộ của nhóm, **không gửi cho peer**. Rule và ví dụ từ ca
 `02_guideline.md` (mục 5, 7, 9). Card dùng ảnh blind (EC09–EC12) chỉ nằm ở đây; decision tương ứng có trong
 `gold_decisions.csv`.
 
-Card nào ghi **"dự kiến"** thì phải chốt lại sau calibration (120–140') và cập nhật Expected theo consensus.
+Card nào ghi **"dự kiến"** (EC04–EC08, EC13, EC14) thì phải chốt lại sau calibration (120–140') và cập nhật Expected theo consensus.
 
 ---
 
@@ -69,14 +69,14 @@ Diversity: ambiguity · small_far · low_visibility
 ---
 
 CASE ID: EC06
-Sample: BDD17
-Scene: Mưa, giọt nước trên kính chắn gió, phố NYC
-Observation: Đốm đỏ-cam và xanh bị nhoè ở bên trái và ở giữa; khó phân biệt đèn xe với đèn đi bộ
-Decision: LABEL chỉ khi nhận ra hình dạng đầu đèn và vị trí ô sáng; nhoè quá thì IGNORE; màu không chắc thì state=unknown (dự kiến)
-Expected: (dự kiến) đầu đèn xanh ở giữa [relevance=ego;state=green]; đốm cam trái [state=unknown] hoặc IGNORE — chốt sau calibration
-Rationale: Giọt nước làm biến dạng ô đèn; đoán màu sẽ tạo nhãn nhiễu cho classifier
-Common mistake: Box mọi đốm màu; gán red cho đốm cam của đèn đi bộ
-Diversity: occlusion · low_visibility
+Sample: GTS14
+Scene: Phố Đức, ban ngày, trời trắng
+Observation: Đầu đèn trên cần vươn giữa (~611,262) sáng **ô trên** màu cam-vàng; đầu đèn thấp trên cột phải (~742,403) và đầu đèn trái xa (~283,403) cũng sáng ô trên
+Decision: LABEL đầu đèn cần vươn và đầu đèn cột phải; đèn trái xa theo rule 1/3 (dự kiến)
+Expected: (dự kiến) [relevance=ego;state=red]×2 · frame visible. Nếu calibration thấy có ô giữa cùng sáng (pha đỏ+vàng của Đức) thì cần rule mới — chốt sau calibration
+Rationale: Màu nhìn như vàng nhưng vị trí ô sáng là ô trên = đỏ (mục 4). Schema chưa có giá trị cho pha đỏ+vàng
+Common mistake: Chọn state=yellow theo màu nhìn thấy; box cả cần treo
+Diversity: ambiguity (state) · edge
 
 ---
 
@@ -93,14 +93,14 @@ Diversity: conflict · temporal
 ---
 
 CASE ID: EC08
-Sample: BDD13
-Scene: Phố ban ngày, sát mép phải có hộp đèn đi bộ nhìn nghiêng
-Observation: Không có đầu đèn xe nào; chỉ thấy hông hộp đèn đi bộ ở mép ảnh
-Decision: IGNORE; frame = out_of_view (dự kiến)
-Expected: 0 box · frame [ego_signal=out_of_view]
-Rationale: Có phần cứng tín hiệu, tức giao lộ có đèn, nhưng không thấy đèn ego
-Common mistake: Chọn none; box hộp đèn đi bộ
-Diversity: negative · ambiguity (out_of_view vs none)
+Sample: GTS02
+Scene: Giao lộ Đức dưới gầm cầu đường sắt, ban ngày
+Observation: Cột trái có đầu đèn sáng xanh (~88,270) dưới biển bắt buộc rẽ trái; cột phải có đầu đèn sáng ô trên (~1200,278) dưới biển bắt buộc rẽ phải; 3 đầu đèn trên giá ngang (~505,330; ~638,335; ~733,342) chỉ thấy mặt lưng/tấm nền; đầu đèn treo trên cùng (~822,20) nhìn lưng
+Decision: LABEL 2 đầu đèn có ô sáng; IGNORE các đầu đèn chỉ thấy lưng (5.2). Relevance của 2 đầu đèn là chỗ dự kiến bất đồng (dự kiến)
+Expected: (dự kiến) xanh trái và đỏ phải đều relevance=ego → ≥ 2 box ego khác màu → frame [ego_signal=escalate]; hoặc một bên là other nếu nhóm chốt rule theo biển hướng đi — chốt sau calibration
+Rationale: Ego không biết rẽ hướng nào; hai đầu đèn khác màu gắn với biển hướng khác nhau là xung đột thật, không nên đoán
+Common mistake: Box các đầu đèn nhìn lưng trên giá ngang; chọn visible theo đèn xanh và bỏ qua đèn đỏ
+Diversity: **conflict** · **escalation** · ambiguity
 
 ---
 
@@ -153,13 +153,25 @@ Diversity: normal · reflection
 ---
 
 CASE ID: EC13
-Sample: BDD09
-Scene: Đường cao tốc ban ngày
-Observation: Mặt lưng màu đen của một biển báo trông giống vỏ đèn; không có ô đèn
-Decision: IGNORE; frame none
-Expected: 0 box · frame [ego_signal=none]
-Rationale: Không thấy mặt ô đèn (5.2); không có phần cứng tín hiệu thật
-Common mistake: Box mặt lưng biển báo với state=unknown
-Diversity: negative
+Sample: GTS24
+Scene: Phố Đức có đường ray tàu điện, ban ngày
+Observation: Đầu đèn treo trên cần vươn (~818,80) sáng **mũi tên đi thẳng** xanh; cột phải có 2 đầu đèn: trên sáng ô vàng nhỏ (~1045,290), dưới sáng mũi tên thẳng xanh (~1055,375); đầu đèn bên trái (~195,170) nhìn nghiêng, không thấy ô
+Decision: LABEL đầu đèn mũi tên thẳng (ego đi thẳng → 5.4c thỏa); đầu đèn có ô vàng nhỏ là chỗ dự kiến bất đồng; IGNORE đầu đèn nhìn nghiêng
+Expected: (dự kiến) mũi tên thẳng [relevance=ego;state=green]×2 · frame visible — chốt sau calibration
+Rationale: Mũi tên chỉ loại relevance=ego khi nó phục vụ làn ego không đi (5.4c); mũi tên thẳng là của ego
+Common mistake: Gán mọi mũi tên relevance=other; box đầu đèn nhìn nghiêng
+Diversity: ambiguity semantics (mũi tên) · edge
+
+---
+
+CASE ID: EC14
+Sample: GTS11
+Scene: Đường phố Đức, mùa thu, ban ngày
+Observation: Đầu đèn trên cần vươn giữa (~607,215) sáng xanh; đèn nhắc lại thấp trên cột phải (~778,400) cũng sáng xanh; đầu đèn trên cần vươn trái (~345,228) chỉ thấy lưng; đầu đèn thấp bên trái (~180,390) nhỏ
+Decision: LABEL 2 đầu đèn xanh; IGNORE đầu đèn nhìn lưng; đầu đèn thấp bên trái theo 5.2/5.3 (dự kiến)
+Expected: (dự kiến) [relevance=ego;state=green]×2 · frame visible
+Rationale: Đèn nhắc lại cùng màu với đèn chính không phải xung đột; đầu đèn nhìn lưng không cho biết màu
+Common mistake: Box đầu đèn nhìn lưng với state=unknown rồi escalate; bỏ đèn nhắc lại thấp
+Diversity: conflict (nhiều đầu đèn) · small_far
 
 ---

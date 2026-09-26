@@ -6,7 +6,7 @@
 - **Nhóm peer test bài của mình:** TODO (cặp A ↔ B; số nhóm lẻ thì ring 3 nhóm A → B → C → A — Lab Coach công bố)
 - **Nhóm mình test bài của:** TODO
 - **Problem family:** Traffic light — trạng thái + ego relevance tại giao lộ nhiều đầu đèn ("Đèn nào điều khiển xe mình?")
-- **Nguồn ảnh:** `bdd100k` (example/calibration/blind) + `lisa` (chỉ example/calibration)
+- **Nguồn ảnh:** `bdd100k` (example/calibration/blind) + `lisa` và `gtsdb` (chỉ example/calibration)
 
 | Thành viên | GitHub | Vai trò chính | File phụ trách |
 |---|---|---|---|

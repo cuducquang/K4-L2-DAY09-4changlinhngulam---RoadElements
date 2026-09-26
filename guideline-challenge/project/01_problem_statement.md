@@ -60,8 +60,12 @@ Tag `frame` còn cho biết kết luận cấp ảnh (`visible` / `out_of_view` 
 
 ## Dữ liệu và giới hạn
 
-- Nguồn là BDD100K (12 ảnh có đèn: ngày, đêm, chạng vạng, mưa) và LISA (1 clip 30 frame, chạng vạng, có đèn mũi tên).
-  Dự kiến dùng khoảng 15 ảnh: example 4, calibration 7, blind 4 (toàn BDD).
-- Chủ yếu là giao lộ Mỹ (New York), nên thứ tự ô đèn theo chiều dọc là đỏ trên, vàng giữa, xanh dưới.
+- Nguồn là BDD100K, LISA và GTSDB. BDD là dashcam tổng quát: phần lớn trong 26 ảnh không có đèn hoặc đèn chỉ vài
+  pixel, nên chỉ vài ảnh có đèn rõ. LISA là 1 clip 30 frame ở cùng một giao lộ lúc chạng vạng, có đèn mũi tên.
+  GTSDB (phố Đức, 1360×800) có vài ảnh đầu đèn to, rõ và nhiều đầu đèn trong một cảnh.
+- Dùng 15 ảnh: example 4 (BDD, LISA), calibration 7 (BDD 2, LISA 1, GTSDB 4), blind 4 (toàn BDD — cảnh chưa thấy).
+- Ảnh BDD/LISA là giao lộ Mỹ; ảnh GTSDB là giao lộ Đức. Cả hai theo thứ tự ô dọc đỏ trên, vàng giữa, xanh dưới.
+  Đức có thêm đèn nhắc lại gắn thấp trên cột và pha đỏ+vàng trước khi xanh — schema v1 chưa có giá trị riêng cho
+  pha này; calibration sẽ quyết có cần thêm hay không.
 - Ảnh tĩnh, không suy ra được đèn nhấp nháy hay đèn tắt: dùng `unknown`, không có giá trị `off`.
 - Chỉ có 1 camera trước và không có HD map. Làn ego được suy ra từ vị trí camera, và mặc định ego đi thẳng.
