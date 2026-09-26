@@ -3,8 +3,9 @@
 Điền trước phút 15. Thay mọi placeholder; còn sót thì `make status` báo ở gate G1.
 
 - **Team:** `4changlinhngulam`
-- **Nhóm peer test bài của mình:** TODO (cặp A ↔ B; số nhóm lẻ thì ring 3 nhóm A → B → C → A — Lab Coach công bố)
-- **Nhóm mình test bài của:** TODO
+- **Nhóm peer test bài của mình:** chưa chốt trong repo này. Blind handoff trong repo cá nhân của Đạt do nhóm `1000`
+  (Nguyễn Chí Bằng) label; cần Lab Coach xác nhận cặp chính thức rồi cập nhật dòng này.
+- **Nhóm mình test bài của:** chưa chốt (chờ Lab Coach công bố cặp/ring).
 - **Problem family:** Traffic light — trạng thái + ego relevance tại giao lộ nhiều đầu đèn ("Đèn nào điều khiển xe mình?")
 - **Nguồn ảnh:** `bdd100k` (example/calibration/blind) + `lisa` và `gtsdb` (chỉ example/calibration)
 

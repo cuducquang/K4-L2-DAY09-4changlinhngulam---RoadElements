@@ -1,8 +1,8 @@
 CVAT task reference — thay mọi placeholder mới là xong.
 
-CVAT version: TODO
-Task calibration (tên, id): TODO
-Task bản cuối theo guideline v3 (tên, id) hoặc lý do không có: TODO
-File export đã nộp (đường dẫn trong repo): TODO
-Guideline version dán trong Guide của task: TODO
-Ghi chú cho người tiếp nhận: TODO
+CVAT version: 2.75.0 (Docker local, http://localhost:8080)
+Task calibration (tên, id): 4changlinhngulam-calib-quang, id 32 (7 ảnh calibration BDD18, BDD25, GTS02, GTS11, GTS14, GTS24, LISA30; Shape, không Track)
+Task bản cuối theo guideline v3 (tên, id) hoặc lý do không có: chưa có — guideline mới ở v1; task bản cuối sẽ tạo sau khi nhóm lên v3 (sau calibration và blind handoff)
+File export đã nộp (đường dẫn trong repo): guideline-challenge/project/06_calibration_exports/quang.zip (CVAT for images 1.1, không kèm ảnh; đã xoá email chủ task khỏi phần meta)
+Guideline version dán trong Guide của task: v1
+Ghi chú cho người tiếp nhận: label import nguyên văn từ 03_cvat_labels.json; mọi attribute có default __undefined__ nên phải chọn tay. CVAT là bản local nên người khác không mở được task id 32; muốn kiểm tra thì import quang.zip vào một task mới có cùng label set.

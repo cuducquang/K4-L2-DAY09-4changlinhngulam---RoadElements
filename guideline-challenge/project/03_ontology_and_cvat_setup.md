@@ -33,9 +33,10 @@ Bảng ontology là **source of truth** cho schema CVAT: `03_cvat_labels.json` p
 
 ## CVAT
 
-- **Phiên bản CVAT** (`make cvat-status`): TODO (điền khi mở CVAT; lớp dùng v2.74.1)
-- **Tên task calibration:** TODO, ví dụ `teamXX-calib-v1`
-- **Guide của task đã dán `02_guideline.md`?** TODO (có / chưa)
+- **Phiên bản CVAT** (`python lab9.py cvat`): CVAT 2.75.0 local tại `http://localhost:8080` (Docker)
+- **Tên task calibration:** `4changlinhngulam-calib-quang` (task id 32, 7 ảnh calibration, label import từ
+  `03_cvat_labels.json`). Mỗi thành viên tạo task riêng trên CVAT local của mình và label độc lập.
+- **Guide của task đã dán `02_guideline.md`?** Có, đã dán bản v1 vào Guide của task 32.
 - **Nhóm dùng Track hay Shape, vì sao:** dùng **Shape**. Ảnh tĩnh không liên tiếp; frame LISA cũng được label độc lập,
   không nối track.
 
@@ -44,4 +45,11 @@ Bảng ontology là **source of truth** cho schema CVAT: `03_cvat_labels.json` p
 Một thành viên **chưa tham gia setup** mở task và trả lời bốn câu: label gì, dùng tool nào, gán attribute nào, khi nào
 escalate. Ghi lại ai test và chỗ họ vấp.
 
-TODO
+**Trạng thái (26/9):** chưa thực hiện. Cần một thành viên chưa tham gia setup mở task 32 và trả lời bốn câu trên,
+sau đó ghi lại tên người test và chỗ họ vấp vào đây.
+
+Chỗ người setup (Quang) tự thấy dễ vấp khi label thử bộ calibration:
+- Đầu đèn quay ngang nhìn từ xa trông giống đèn quay mặt (GTS02 giàn đèn dưới cầu, GTS11 cột trái). Cần xem 5.2
+  ở mức zoom ≥ 400%.
+- Không có quy tắc cho đầu đèn quay mặt mà **không ô nào sáng** (GTS02 giàn đèn), nên phải chọn `state=unknown`.
+- Đèn LED đỏ ban ngày bị cháy sáng thành lõi vàng có viền đỏ (GTS02, GTS14). Phải dựa vào vị trí ô sáng.
