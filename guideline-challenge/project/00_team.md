@@ -2,7 +2,7 @@
 
 Điền trước phút 15. Thay mọi placeholder; còn sót thì `make status` báo ở gate G1.
 
-- **Team:** TODO (ví dụ `team07`)
+- **Team:** `4changlinhngulam`
 - **Nhóm peer test bài của mình:** TODO (cặp A ↔ B; số nhóm lẻ thì ring 3 nhóm A → B → C → A — Lab Coach công bố)
 - **Nhóm mình test bài của:** TODO
 - **Problem family:** Traffic light — trạng thái + ego relevance tại giao lộ nhiều đầu đèn ("Đèn nào điều khiển xe mình?")
@@ -10,7 +10,12 @@
 
 | Thành viên | GitHub | Vai trò chính | File phụ trách |
 |---|---|---|---|
-| TODO | TODO | TODO | TODO |
+| Cù Đức Quang (2A202602188) — nhóm trưởng | [cuducquang](https://github.com/cuducquang) | QA owner | `05_qa_plan.md`, `06_calibration_report.csv`, `07_blind_handoff/` |
+| Nguyễn Trọng Thắng (2A202602169) | [trogthang](https://github.com/trogthang) | Spec owner | `01_problem_statement.md`, `02_guideline.md` |
+| Đoàn Vĩnh Nguyên (2A202602201) | [everythinggoeson711](https://github.com/everythinggoeson711) | CVAT owner | `03_*`, `sample_pack.csv`, `09_cvat_export_or_task_reference.txt` |
+| Hoàng Văn Đạt (2A202602267) | [dathoangdev3-dev](https://github.com/dathoangdev3-dev) | Gold owner | `04_edge_cases/`, `08_revision_log.md` |
+
+Repo cá nhân của từng thành viên: xem [`TEAMMATES.md`](../../TEAMMATES.md).
 
 Gợi ý chia vai (nhóm 2–3 người thì gộp): **spec owner** (`01`, `02`), **CVAT owner** (`03_*`, `sample_pack.csv`,
 `09`), **gold owner** (`04_edge_cases/`), **QA owner** (`05`, `06`, `07_blind_handoff/`). Mỗi file một người sửa
